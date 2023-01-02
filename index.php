@@ -255,3 +255,324 @@ comment */
 // echo "<br>";
 // echo $b; // 20
 // echo "<br>";
+
+
+//! ================ Predefined Variables ================
+
+// echo $_SERVER["SERVER_NAME"]; // localhost
+// echo "<br>";
+// echo $_SERVER["SERVER_PORT"]; // 80
+// echo "<br>";
+// echo $_SERVER["SERVER_PROTOCOL"]; // HTTP/1.1
+// echo "<br>";
+// echo $_POST["name"]; 
+// echo "<br>";
+// echo $_POST["age"]; 
+
+//! 
+// ?>
+
+<!-- <form action="" method="post"> -->
+    <!-- <input type="text" name="name"> -->
+    <!-- <input type="text" name="age"> -->
+    <!-- <input type="submit" value="submit"> -->
+<!-- </form> -->
+<?php
+
+//! ================ Constant ================
+// constant always uppercase
+
+// define("NAME", "Ahmed");
+// define("AGE", 20);
+// echo NAME; // Ahmed
+// echo "<br>";
+// echo AGE*2; // 40
+
+
+//! ================ Predefined Constants ================
+//? predefined constants [sensitive case]
+// echo PHP_VERSION; // 8.2.0
+// echo "<br>";
+// echo PHP_OS; // WINNT
+// echo "<br>";
+//? magic constants [insensitive case]
+// echo __LINE__; // 299
+// echo "<br>";
+// echo __FILE__; // D:\PHP\htdocs\ala\index.php
+// echo "<br>";
+// echo __DIR__; // D:\PHP\htdocs\ala
+// echo "<br>";
+
+//! ================ Operators ================
+//? arithmetic operators
+// +$a => identity
+// -$a => negation
+
+// echo +"10";    // 10
+// echo "<br>";
+// echo gettype (+"10"); // integer
+// echo "<br>";
+// echo -"10";     // -10
+// echo "<br>";
+// echo gettype (-"10"); // integer
+
+//? assignment operators
+// $a = 10;
+// $a += 10; // $a = $a + 10;
+// echo $a; // 20
+// echo "<br>";
+// $a -= 10; // $a = $a - 10;
+// echo $a; // 10
+// echo "<br>";
+// $a *= 10; // $a = $a * 10;
+// echo $a; // 100
+// echo "<br>";
+// $a /= 10; // $a = $a / 10;
+// echo $a; // 10
+// echo "<br>";
+// $a %= 10; // $a = $a % 10;
+// echo $a; // 0
+// echo "<br>";
+
+//? comparison operators
+
+// var_dump(10 == "10"); // true
+// echo "<br>";
+// var_dump(10 === "10"); // false
+// echo "<br>";
+// var_dump(10 != "10"); // false   <> 10 
+// echo "<br>";
+// var_dump(10 !== "10"); // true
+// echo "<br>";
+
+// space ship operator
+// echo 10 <=> 10; // 0
+// echo "<br>";
+// echo 10 <=> 20; // -1
+// echo "<br>";
+// echo 20 <=> 10; // 1
+// echo "<br>";
+
+//? increment / decrement operators
+
+// post increment
+// $a = 10;
+// echo $a++; // 10
+// echo "<br>";
+// echo $a; // 11
+// echo "<br>";
+
+// pre increment
+// $a = 10;
+// echo ++$a; // 11
+// echo "<br>";
+// echo $a; // 11
+// echo "<br>";
+
+// post decrement
+// $a = 10;
+// echo $a--; // 10
+// echo "<br>";
+// echo $a; // 9
+// echo "<br>";
+
+// pre decrement
+// $a = 10;
+// echo --$a; // 9
+// echo "<br>";
+// echo $a; // 9
+// echo "<br>";
+
+//? logical operators
+// and &&  && has higher precedence than and 
+// or || || has higher precedence than or 
+// xor
+// not !
+
+//!=========== string operators ===========
+// .
+// .=
+
+// define("NAME", "Ahmed");
+// $a = "hello";
+// $b = "world";
+// $c = "!";
+// echo $a . $b; // helloworld
+// echo "<br>";
+// echo $a .= $b; // helloworld
+// echo "<br>";
+// echo "hello" . "world" . "!"; // helloworld!
+// echo "<br>";
+// echo "{$a} {$b} {$c}"; // hello world !
+// echo "<br>";
+// echo "{$a} {$b} {$c}" .NAME ; // hello world !
+
+//!=========== array operators ===========
+// + => union
+// == => equality
+// === => identity [same type and value same order and same key]
+// != => not equal
+// <> => not equal
+// !== => not identical
+
+// $a = [1=> "A" , 2=> "B" ];
+// $b = [3=> "C" , 4=> "D"  ];
+// $c = $a + $b;
+
+// echo "<pre>";
+// print_r($c); 
+// echo "</pre>";
+
+// print_r($a == $b); // false
+// print_r($a === $b); // false
+// print_r($a != $b); // true
+// print_r($a <> $b); // true
+// print_r($a !== $b); // true
+
+
+
+//!=========== error operators ===========
+// @ => error control operator
+
+// $a = 20;
+// $b = @$a or die("not found"); // 15
+// echo $b;
+// echo "<br>";
+
+// file 
+// $file = @fopen("test.txt", "r") or die("not found");
+
+// include
+// (@include "test.txt" )or die("not found");
+
+
+//!===========  Operators Precedence  ===========
+
+// echo 10 + 20 * 30; // 610
+// echo "<br>";
+// echo (10 + 20) * 30; // 900
+// echo "<br>";
+
+// $a = 10 || false ; // $a = (10 || false) => $a = true
+// echo $a; // 1
+// echo "<br>";
+
+// $b = 10 or false ; // ($b = 10 ) or false => $b = 10
+// echo $b; // 10
+// echo "<br>";
+
+
+
+
+//! ================ Control Structures ================
+//? if
+// $a = 10;
+// if($a == 10){
+//     echo "true";
+// }else{
+//     echo "false";
+// }
+
+//? if else if
+// $a = 20;
+// if($a == 10){
+//     echo "true";
+// }else if($a == 20){
+//     echo "false";
+// }else{
+//     echo "not found";
+// }
+
+//? alternative syntax
+// $a = 20;
+// if($a == 10):
+//     echo "true";
+// elseif($a == 20):
+//     echo "false";
+// else:
+//     echo "not found";
+// endif;
+
+
+// ?>
+
+<?php
+// $page = "about" ;
+
+// if ($page == "home"):
+//     header("Location: homePage.php");
+// exit();
+// elseif ($page == "about"):
+//     header("Location: aboutPage.php");
+//     exit();
+// endif;
+
+//!========== ternary operator ==========
+
+// $a = true;
+
+// echo "i love php because it's easy" . ($a ? " and it's fun" : " and it's hard") . " to learn it";
+
+//!========== switch ==========
+
+// $day= "sunday" ;
+
+// switch ($day) {
+//     case "monday":
+//         echo "today is $day";
+//         break;
+//     case "tuesday":
+//         echo "today is $day";
+//         break;
+//     case "wednesday":
+//         echo "today is $day";
+//         break;
+//     case "thursday":
+//         echo "today is $day";
+//         break;
+//     case "friday":
+//         echo "today is $day";
+//         break;
+//     case "saturday":             
+//     case "sunday":
+//         echo "today is $day and there is no school ";
+//         break;
+//     default:
+//         echo "not found";
+//         break;
+// }
+
+//!========== while ==========
+// $i = 1;
+// while ($i <= 10) :
+//     echo $i . "<br>";
+//     $i++;
+// endwhile;
+
+//!========== do while ==========
+// $i = 1;
+// do {
+//     echo $i . "<br>";
+//     $i++;
+// } while ($i <= 10);
+
+//!========== for ==========
+// for ($i = 1; $i <= 10; $i++) :
+//     echo $i . "<br>";
+// endfor;
+
+//!========== foreach ==========
+// $a = [1, 2, 3, 4, 5];
+// foreach ($a as $value) :
+//     echo $value . "<br>";
+// endforeach;
+
+// key and value
+
+// $a = [1, 2, 3, 4, 5];
+// foreach ($a as $key => $value) :
+//     echo $key . "=>" . $value . "<br>";
+// endforeach;
+
+
+
