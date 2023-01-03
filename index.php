@@ -575,4 +575,187 @@ comment */
 // endforeach;
 
 
+//! ===== break and continue =====
+// $a = [1, 2, 3, 4, 5];
+// foreach ($a as $key => $value) :
+//     if ($key == 2) {
+//         break;
+//     }
+//     echo $key . "=>" . $value . "<br>";
+// endforeach;
+
+// $a = [1, 2, 3, 4, 5];
+// foreach ($a as $key => $value) :
+//     if ($key == 2) {
+//         continue;
+//     }
+//     echo $key . "=>" . $value . "<br>";
+// endforeach;
+
+//! ======= include and require =======
+
+// include "test.php";
+// echo $a . "<br>";
+
+// require "test.php";
+// echo $a . "<br>";
+
+// difference between include and require
+// require will produce a fatal error (E_COMPILE_ERROR) and stop the script.
+// include will only produce a warning (E_WARNING) and the script will continue.
+
+//! ======= include_once and require_once =======
+// include_once "test.php";
+// echo $a . "<br>";
+// $a=50;
+// include_once "test.php";
+// echo $a . "<br>";                // 50
+
+//!============= function =============
+
+//? introduction and dry concept (don't repeat yourself)
+//?syntax
+// function functionName($param1, $param2, $param3) {
+//      code to be executed
+// }
+// functionName($arg1, $arg2, $arg3);
+
+// function hello($user) {
+//     echo "hello $user";
+// }
+
+// hello("ahmed");
+
+// function sum($num1, $num2) {
+//     return $num1 + $num2;
+// }
+
+// sum(10, 20); // 30
+
+
+
+// function deep_freezer ($temp) {
+//     if ($temp < -18):
+//         return "the temperature is $temp and it's ok";
+//     else:
+//         return "the temperature is $temp and it's not ok";
+//     endif;
+    
+// } 
+
+
+// echo deep_freezer(20) . "<br>";
+
+
+//? function 
+//? optional return and null
+//? end after return
+
+// $prizes =["car", "house", "money", "nothing"];
+
+// function get_number($num1,$num2) {
+//     return $num1 + $num2;
+// }
+
+// echo $prizes[get_number(1,2)];
+
+
+//? default value for parameters
+
+// function get_number($num1=5,$num2 = 10,$num3 = 15) {
+//     return $num1 + $num2 + $num3;
+// }
+
+// echo get_number(1,2,3);
+// echo "<br>";
+// echo get_number(num3:1);
+// echo "<br>";
+// echo get_number(num2:1);
+// echo "<br>";
+
+
+//! variable arguments list
+//_______func_num_args()
+//_______func_get_args()
+//_______func_get_arg(index)
+//? Spread operator
+
+// function calculate () {
+    // echo "Number of arguments :" . func_num_args() . "<br>";
+    // echo "Argument Index 1 :" . func_get_arg(1) . "<br>";
+    // print_r(func_get_args());
+//     $result=0;
+//     foreach (func_get_args() as $arg) :
+//         $result += $arg;
+        
+//     endforeach;
+//     echo "<br> result = $result";
+
+// }
+
+// ------ spread operator
+
+// function calculate_2 (...$nums) {
+//     $result=0;
+//     foreach ($nums as $num) :
+//         $result += $num;
+        
+//     endforeach;
+//     echo "<br> result = $result";
+
+// }
+
+// calculate(10,20,30,40,50,100);
+// calculate_2(10,20,30,40,50,100,150);
+
+
+//----- unpacking array
+
+// $group_of_skills=["html", "css", "js", "php", "mysql"];
+
+// function get_data ($name, $position= "web developer " , ...$skills) {
+//     echo "name : $name <br>";
+//     echo "position : $position <br>";
+//     echo "skills : <br>";
+//     foreach ($skills as $skill) :
+//         echo "-- $skill <br>";
+//     endforeach;
+// }
+
+
+// get_data("Rami", "frontEnd developer" , "html", "css", "js");
+// get_data("Ahmed", ...$group_of_skills);
+
+//? variable function
+
+// function one() {
+//     echo "one";
+// }
+
+// $func1="one";
+
+// echo $func1();
+// echo "<br>";
+
+// function hello ($name) {
+//     echo "hello $name";
+// }
+
+// $func2="hello";
+
+// echo $func2("ahmed");
+// echo "<br>";
+// ? built in functions
+
+// echo strlen("ahmed");
+// echo "<br>";
+// echo str_word_count("ahmed abd elhady");
+
+// echo "<br>";
+// $func3 = "str_word_count";
+// echo $func3("ahmed abd elhady");
+
+//function existance
+// function_exists("str_word_count");
+
 
