@@ -758,4 +758,246 @@ comment */
 //function existance
 // function_exists("str_word_count");
 
+//? passing arguments by reference
 
+// function add(&$num) {       //!& is a reference operator
+//     $num += 10;
+//     return $num;
+// }
+
+// $a=10;
+// echo add($a);
+// echo "<br>";
+// echo $a; // 20
+
+
+//? return type declaration
+
+// function add(int $num1, int $num2) : int {
+//     return $num1 + $num2;
+// }
+
+// echo add(10, 20.5);
+// echo "<br>";
+// echo add(10, "20.5");
+// echo "<br>";
+
+//! ============= anonymous function =============
+
+
+//? syntax
+// $var = function ($param1, $param2, $param3) {
+//     code to be executed
+// };
+
+// $sum = function ($num1, $num2) {
+//     return $num1 + $num2;
+// };
+
+//? inherit variable from parent scope
+
+// $a=10;
+// $b=20;
+
+// $sum = function (c$) use ($a, $b) {
+//     return $a + $b + $c;
+// };
+
+// echo $sum(30); // 60
+
+//?pass anonymous function to another function => array_map
+
+$nums = [10, 20, 30, 40, 50];
+
+// function add_10($num) {
+//     return $num + 10;
+// }
+
+// $nums_after_adding_10  = array_map("add_10", $nums);
+
+// echo "<pre>";
+// print_r($nums_after_adding_10);
+// echo "</pre>";
+
+// $nums_after_adding_5  = array_map(function ($num) {return $num + 5;}, $nums);
+
+// echo "<pre>";
+// print_r($nums_after_adding_5);
+// echo "</pre>";
+
+//! ============= arrow function =============
+//? syntax
+// $var = fn ($param1, $param2, $param3) => code to be executed;
+
+// $nums = [10, 20, 30, 40, 50];
+
+// $nums_after_adding_5  = array_map(fn ($num) =>  $num + 5, $nums);
+
+// echo "<pre>";
+// print_r($nums_after_adding_5);
+// echo "</pre>";
+
+//? inherit variable from parent scope in arrow function => no need to use use keyword
+
+//! ============= String Access And Update Elements =============
+//? string is an array of characters
+//? access string elements by index
+//? negative index is allowed with the php version 7.1 or higher
+
+// $str = "i love php";
+// echo "first letter is : $str[0]";
+// echo "<br>";
+// echo "length is : " . strlen($str);
+// echo "<br>";
+// echo "last letter is : {$str[strlen($str)-1]}";
+// echo "<br>";
+// echo "last letter is : $str[-1]";
+// echo "<br>";
+
+
+// //? update string elements by index
+
+// $str[0] = "I";
+// echo $str;
+// echo "<br>";
+
+// $newstr = "we ". substr($str, 2);
+
+// echo $newstr;
+// echo "<br>";
+// $newstr = substr_replace($str, "We ", 0, 2);
+// echo $newstr;
+
+
+//? string functions
+
+// echo ucfirst("ahmed"); // first letter capital
+// echo "<br>";
+// echo lcfirst("AHMED"); // first letter small
+// echo "<br>";
+// echo ucwords("ala eddine azri"); // first letter of each word capital
+// echo "<br>";
+// echo ucwords("ala eddine.azri" ,"."); // 
+// echo "<br>";
+// echo strtoupper("ahmed"); // all letters capital
+// echo "<br>";
+// echo strtolower("AHMED"); // all letters small
+// echo "<br>";
+// echo str_replace("ala", "baha", "ala eddine azri"); // replace string
+// echo "<br>";
+// echo str_replace(["ala", "eddine"], ["baha", "azri"], "ala eddine azri"); // replace string
+// echo "<br>";
+// echo str_repeat("ahmed ", 5); // repeat string
+// echo "<br>";
+// echo strrev("ahmed");  // string reverse 
+// echo "<br>";
+
+
+//? string functions 
+//implode => convert array to string
+//explode => convert string to array
+//str_shuffle => shuffle string
+//strrev => reverse string
+//trim => remove spaces from start and end of string
+//ltrim => remove spaces from start of string
+//rtrim => remove spaces from end of string
+//--- space " "
+//--- tab "\t"
+//--- new line "\n"
+//--- carriage return "\r"
+//--- vertical tab "\v"
+//--- form feed "\f"
+//--- null byte "\0"
+//--- unicode character "\u{a0}" 
+
+// $friends = [ "ahmed","ali","kimo","baha","mohamed"];
+
+// echo implode(" - ", $friends);
+// echo "<br>";
+// // implode list of friends with new line return
+// echo implode("<br>", $friends);
+// echo "<br>";
+
+
+// $str = "i love php and i love javascript";
+
+// echo "<pre>";
+// print_r(explode(" ", $str));
+// echo "</pre>";
+
+// echo "<pre>";
+// print_r(explode("and", $str));
+// echo "</pre>";
+
+
+// echo "<pre>";
+// print_r(explode(" ", $str, 3));
+// echo "</pre>";
+
+
+// $new_str = " ala eddine azri   ";
+// echo trim($new_str);
+// echo "<br>";
+// echo strlen(trim($new_str));
+// echo "<br>";
+// echo ltrim($new_str);
+// echo "<br>";
+// echo strlen(ltrim($new_str));
+// echo "<br>";
+// echo rtrim($new_str);
+// echo "<br>";
+// echo strlen(rtrim($new_str));
+// echo "<br>";
+// $new_str_2= " @ala eddine azri@## ";
+// echo trim($new_str_2, "@ , #");
+// echo "<br>";
+// echo strlen(trim($new_str_2, "@ , #"));
+
+// $new_str_3 = "ala eddine azri";
+
+// echo chunk_split($new_str_3, 3, " ");
+// echo "<br>";
+// echo chunk_split($new_str_3, 3, "/");
+
+//str_split => split string to array of characters
+//chunk_split => split string to array of characters with a specific length
+
+// echo "<pre>";
+// print_r(str_split($new_str_3 , 3));
+// echo "</pre>";
+
+// echo "<br>";
+// strip_tags => remove html tags from string
+// echo strip_tags("<h1>ahmed</h1>");
+// echo "<br>";
+
+
+//? string functions 
+//--- strpos => search for a specific string in a string and return the index of the first match
+//--- strrpos => search for a specific string in a string and return the index of the last match
+//--- stripos => search for a specific string in a string and return the index of the first match without case sensitive
+//--- strripos => search for a specific string in a string and return the index of the last match without case sensitive
+//--- substr_count => count the number of times a substring occurs in a string
+//--- substr => return a part of a string
+
+$str = "Hello Hello";
+// echo strpos($str, "H");  // 0
+// echo "<br>";
+// echo strpos($str, "H", 1); // 6
+// echo "<br>";
+// echo strpos($str, "H", -5);  // 6
+// echo "<br>";
+// echo strpos($str, "H", -6);  // 0
+
+// echo "<br>";
+// echo stripos($str, "h");  // 0
+
+// echo "<br>";
+// echo substr_count($str, "H");  // 2
+// echo "<br>";
+// echo substr_count($str, "H", 1);  // 1
+// echo "<br>";
+// var_dump( substr_count($str, "He",1,5));  // 0 // 1=> start index 5=> length
+
+// echo "<br>";
+// echo substr_count("abcdabcda" , "abcda"); //  1 
