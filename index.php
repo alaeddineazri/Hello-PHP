@@ -1001,3 +1001,40 @@ $str = "Hello Hello";
 
 // echo "<br>";
 // echo substr_count("abcdabcda" , "abcda"); //  1 
+
+// parse_str("name=ahmed&age=25 ", $query); // convert string to array query string
+// echo "<br>";
+// echo "<pre>";
+// print_r($query);
+// echo "</pre>";
+// echo "<br>";
+// echo $query["name"];
+// echo "<br>";
+// echo $query["age"];
+// echo "<br>";
+
+// quotemeta => escape meta characters in a string
+// echo quotemeta("ahmed azri + [](( ");
+// echo "<br>";
+
+//str_pad => pad a string to a new length with a string
+
+// echo str_pad("12", 8 , "*", STR_PAD_LEFT);
+// echo "<br>";
+// echo str_pad("123", 8 , "*" , STR_PAD_BOTH);
+// echo "<br>";
+// echo str_pad("1234", 8 , "*" , STR_PAD_RIGHT);
+// echo "<br>";
+// echo str_pad("12345", 8 , "*" , STR_PAD_LEFT);
+// echo "<br>";
+// echo str_pad("123456", 8 , "*" , STR_PAD_LEFT);
+
+//STR_PAD_RIGHT => pad a string to a new length with a string from right
+//STR_PAD_LEFT => pad a string to a new length with a string from left
+//STR_PAD_BOTH => pad a string to a new length with a string from both sides
+
+
+// echo strtr("atmed azri", "t", "h"); // replace characters in a string
+
+// $translate = ["t" => "h", "o" => "i"];
+// echo strtr("atmed azro",$translate); // replace characters in a string
