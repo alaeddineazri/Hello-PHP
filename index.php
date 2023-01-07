@@ -959,8 +959,8 @@ $nums = [10, 20, 30, 40, 50];
 // echo "<br>";
 // echo chunk_split($new_str_3, 3, "/");
 
-//str_split => split string to array of characters
-//chunk_split => split string to array of characters with a specific length
+//*str_split => split string to array of characters
+//*chunk_split => split string to array of characters with a specific length
 
 // echo "<pre>";
 // print_r(str_split($new_str_3 , 3));
@@ -980,7 +980,7 @@ $nums = [10, 20, 30, 40, 50];
 //--- substr_count => count the number of times a substring occurs in a string
 //--- substr => return a part of a string
 
-$str = "Hello Hello";
+// $str = "Hello Hello";
 // echo strpos($str, "H");  // 0
 // echo "<br>";
 // echo strpos($str, "H", 1); // 6
@@ -1029,12 +1029,123 @@ $str = "Hello Hello";
 // echo "<br>";
 // echo str_pad("123456", 8 , "*" , STR_PAD_LEFT);
 
-//STR_PAD_RIGHT => pad a string to a new length with a string from right
-//STR_PAD_LEFT => pad a string to a new length with a string from left
-//STR_PAD_BOTH => pad a string to a new length with a string from both sides
+//?STR_PAD_RIGHT => pad a string to a new length with a string from right
+//?STR_PAD_LEFT => pad a string to a new length with a string from left
+//?STR_PAD_BOTH => pad a string to a new length with a string from both sides
 
 
 // echo strtr("atmed azri", "t", "h"); // replace characters in a string
 
 // $translate = ["t" => "h", "o" => "i"];
 // echo strtr("atmed azro",$translate); // replace characters in a string
+
+
+//?str_replace => replace all occurrences of the search string with the replacement string
+// echo str_replace("b", "l", "aba azri" ,$count); //
+// echo "<br>";
+// echo "number of replaces : $count"; // 1
+// echo "<br>";
+// echo str_replace(["y", "b"], ["i", "l"], "aba azry" ,$count); //
+// echo "<br>";
+// echo "number of replaces : $count"; // 2
+// echo "<br>";
+
+//? str_replace() in array 
+// $arr = ["one", "tow", "three" , "four"];
+// echo "<pre>";
+// print_r(str_replace("one",1, $arr));
+// echo "</pre>";
+
+
+//?str_ireplace => replace all occurrences of the search string with the replacement string without case sensitive
+
+
+//? substr_replace => replace text within a portion of a string
+//==== $ positive length => replace from start index to length
+//==== $ negative length => replace from start index to length from end
+//==== $ length = 0 => insert instead of replace
+
+// echo substr_replace("OneTwo", 1, 0); // 1 
+// echo "<br>";
+// echo substr_replace("OneTwo", 1, 3); // One1
+// echo "<br>";
+// echo substr_replace("OneTwo", 1, 5); // OneTw1
+// echo "<br>";
+// echo substr_replace("OneTwo", 1, -1); // OneTw1
+// echo "<br>";
+// echo substr_replace("OneTwo", 2, 2); // On2
+// echo "<br>";
+// echo substr_replace("OneTwo", 2, 2, 2); // On2wo
+// echo "<br>";
+// echo substr_replace("OneTwo", 2, 1, 4); // O2o
+// echo "<br>";
+// echo substr_replace("ala_eddine_azri","el" ,4, 6); //ala_el_azri
+// echo "<br>";
+// echo substr_replace("ala_eddine_azri","el" ,4, -4); //ala_elazri
+// echo "<br>";
+// echo substr_replace("ala_eddine_azri","el" ,4, 0); //ala_eleddine_azri //!insert instead of replace
+// echo "<br>";
+
+//substr_replace() in array (for every element)
+// $arr = ["one", "tow", "three" , "four"];
+// echo "<pre>";
+// print_r(substr_replace($arr, 1, 0));
+// echo "</pre>";
+
+
+//?wordwrap => wrap a string to a given number of characters
+//syntax : wordwrap(string, width, break, cut)
+// $str = "welcome to php course 2022";
+// echo wordwrap($str, 8, "<br>"); 
+// echo "<br>";
+// $str_1 = "welcome to php course 2022";
+// echo wordwrap($str_1, 3, "<br>"); 
+// echo "<br>";
+// $str_2 = "welcome to php course 2022 very_long_word";
+// echo wordwrap($str_2, 7, "<br>", true);
+// echo "<br>";
+
+//ord => return the ASCII value of the first character of a string
+// echo ord("a"); // 97
+// echo "<br>";
+// echo ord("A"); // 65
+// echo "<br>";
+//char => return a specific character
+// echo chr(97); // a
+// echo "<br>";
+// echo chr(65); // A
+
+
+//similar_text => calculate the similarity between two strings
+// echo similar_text("ahmed", "ahmed"); // 5
+// echo "<br>";
+// echo similar_text("ahmed", "ahmed azri"); // 5
+
+// echo similar_text("ahmed", "ahmed" , $perc); // 5
+// echo "<br>";
+// echo $perc; // 100
+// echo "<br>";
+// echo similar_text("ahmed", "ahmed azri", $perc); // 5
+// echo "<br>";
+// echo $perc; // 66.666666666667
+
+//? strstr => find the first occurrence of a string
+//syntax : strstr(haystack, needle, before_needle)
+
+echo strstr("ala eddine azri", "edd"); // eddine azri
+echo "<br>";
+echo strstr("ahmed azri", "azri", true); // ahmed
+echo "<br>";
+echo strstr("ahmed azri", "azri", false); // azri
+echo "<br>";
+
+//?stristr => find the first occurrence of a string without case sensitive
+// echo stristr("ala eddine azri", "EDD"); // eddine azri
+// echo "<br>";
+
+//?number_format => format a number with grouped thousands
+//syntax : number_format(number, decimals, decimalpoint, separator)
+
+// echo number_format(123456789, 0, ",", "."); // 123.456.789
+// echo number_format(1000000.5554, 3, ",", ".");  // 1.000.000,555
+
